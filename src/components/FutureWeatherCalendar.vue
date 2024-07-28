@@ -52,7 +52,13 @@
                     :src="day.weatherIcon"
                     class="weather-icon"
                   >
-                    <q-tooltip transition-show="scale" style="font-size: 16px">
+                    <q-tooltip
+                      transition-show="scale"
+                      transition-hide="scale"
+                      anchor="bottom middle"
+                      self="top middle"
+                      style="font-size: 16px"
+                    >
                       {{ day.description }}
                     </q-tooltip>
                   </q-img>
@@ -69,9 +75,15 @@
             :key="index"
           >
             <q-img :src="stat.icon" class="stat-icon">
-              <q-tooltip transition-show="scale" style="font-size: 16px">{{
-                stat.description
-              }}</q-tooltip>
+              <q-tooltip
+                transition-show="scale"
+                transition-hide="scale"
+                anchor="bottom middle"
+                self="top middle"
+                style="font-size: 16px"
+              >
+                {{ stat.description }}
+              </q-tooltip>
             </q-img>
             <span>{{ stat.count }}天</span>
           </div>
