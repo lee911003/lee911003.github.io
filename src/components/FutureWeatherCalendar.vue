@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center" style="min-height: 680px; padding: 15px">
+  <q-page class="flex flex-center" style="min-height: 660px; padding: 30px">
     <div class="future-weather-calendar">
       <div class="calendar-header">
         <div class="year">
