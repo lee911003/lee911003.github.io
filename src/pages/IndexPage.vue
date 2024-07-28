@@ -156,10 +156,9 @@
           <div class="iframe-wrapper" v-if="weatherView === 'today'">
             <q-img :src="weatherImgSrc" />
           </div>
-          <FutureWeatherCalendar
-            v-if="weatherView === 'future'"
-            class="frame-container"
-          />
+          <div class="calendar-wrapper" v-if="weatherView === 'future'">
+            <FutureWeatherCalendar />
+          </div>
         </div>
       </div>
 
@@ -1019,6 +1018,10 @@ export default defineComponent({
   width: 1200px;
   margin: 0 auto;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-wrapper {
+  height: 680px;
 }
 
 .top-banner {
