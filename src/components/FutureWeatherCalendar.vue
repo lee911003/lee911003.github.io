@@ -1,91 +1,86 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="calendar-wrapper">
-      <div class="future-weather-calendar">
-        <div class="calendar-header">
-          <div class="year">
-            <div class="year-part q-pl-xs">{{ calendarYearPart1 }}</div>
-            <div class="year-part q-pl-xs">{{ calendarYearPart2 }}</div>
-          </div>
-          <div class="month q-pl-md">AI Calendar</div>
+  <q-page class="flex flex-center" style="min-height: 680px">
+    <div class="future-weather-calendar">
+      <div class="calendar-header">
+        <div class="year">
+          <div class="year-part q-pl-xs">{{ calendarYearPart1 }}</div>
+          <div class="year-part q-pl-xs">{{ calendarYearPart2 }}</div>
         </div>
-        <div class="main-content">
-          <div class="calendar-section">
-            <div class="calendar-grid">
-              <div
-                class="day-header"
-                v-for="day in daysOfWeek"
-                :key="day"
-                :class="{ weekend: isWeekend(day) }"
-              >
-                {{ day }}
-              </div>
-              <div
-                v-for="(day, index) in calendarGrid"
-                :key="index"
-                :class="{
-                  'no-data': !day.weatherIcon,
-                  weekend: isWeekendIndex(index),
-                }"
-                class="day-cell"
-              >
-                <div class="day-content">
-                  <div
-                    class="day-number"
-                    :class="{ 'text-red': isWeekendIndex(index) }"
-                  >
-                    <div>
-                      <div
-                        v-if="day.showMonth"
-                        :class="{
-                          'text-red': isWeekendIndex(index),
-                          'month-label': true,
-                        }"
-                      >
-                        {{ day.month }}月
-                      </div>
-                      {{ day.date }}
-                    </div>
-                  </div>
-                  <div class="day-icon">
-                    <q-img
-                      v-if="day.weatherIcon"
-                      :src="day.weatherIcon"
-                      class="weather-icon"
+        <div class="month q-pl-md">AI Calendar</div>
+      </div>
+      <div class="main-content">
+        <div class="calendar-section">
+          <div class="calendar-grid">
+            <div
+              class="day-header"
+              v-for="day in daysOfWeek"
+              :key="day"
+              :class="{ weekend: isWeekend(day) }"
+            >
+              {{ day }}
+            </div>
+            <div
+              v-for="(day, index) in calendarGrid"
+              :key="index"
+              :class="{
+                'no-data': !day.weatherIcon,
+                weekend: isWeekendIndex(index),
+              }"
+              class="day-cell"
+            >
+              <div class="day-content">
+                <div
+                  class="day-number"
+                  :class="{ 'text-red': isWeekendIndex(index) }"
+                >
+                  <div>
+                    <div
+                      v-if="day.showMonth"
+                      :class="{
+                        'text-red': isWeekendIndex(index),
+                        'month-label': true,
+                      }"
                     >
-                      <q-tooltip
-                        transition-show="scale"
-                        style="font-size: 16px"
-                      >
-                        {{ day.description }}
-                      </q-tooltip>
-                    </q-img>
+                      {{ day.month }}月
+                    </div>
+                    {{ day.date }}
                   </div>
+                </div>
+                <div class="day-icon">
+                  <q-img
+                    v-if="day.weatherIcon"
+                    :src="day.weatherIcon"
+                    class="weather-icon"
+                  >
+                    <q-tooltip transition-show="scale" style="font-size: 16px">
+                      {{ day.description }}
+                    </q-tooltip>
+                  </q-img>
                 </div>
               </div>
             </div>
           </div>
-          <div class="statistics-section">
-            <span class="statistics-title">各項指標統計</span>
-            <div
-              class="stat-item"
-              v-for="(stat, index) in filteredStatistics"
-              :key="index"
-            >
-              <q-img :src="stat.icon" class="stat-icon">
-                <q-tooltip transition-show="scale" style="font-size: 16px">{{
-                  stat.description
-                }}</q-tooltip>
-              </q-img>
-              <span>{{ stat.count }}天</span>
-            </div>
+        </div>
+        <div class="statistics-section">
+          <span class="statistics-title">各項指標統計</span>
+          <div
+            class="stat-item"
+            v-for="(stat, index) in filteredStatistics"
+            :key="index"
+          >
+            <q-img :src="stat.icon" class="stat-icon">
+              <q-tooltip transition-show="scale" style="font-size: 16px">{{
+                stat.description
+              }}</q-tooltip>
+            </q-img>
+            <span>{{ stat.count }}天</span>
           </div>
         </div>
-        <span class="note-text">
-          *註:
-          本項「AI智繪月曆」為使用AI全球模式進行天氣類型辯識之實驗性產品，使用本產品前，務必了解數值模式的預報能力與極限。正確之天氣資訊，請參考中央氣象署發布之官方預報。
-        </span>
       </div>
+      <span class="note-text">
+        *註:
+        本項「AI智繪月曆」為使用AI全球模式進行天氣類型辯識之實驗性產品，使用本產品前，務必了解數值模式的預報能力與極限。正確之天氣資訊，請參考中央氣象署發布之官方預報。
+      </span>
     </div>
   </q-page>
 </template>
@@ -238,15 +233,10 @@ export default {
 
 <style scoped>
 /* 整個月曆範圍 */
-.calendar-wrapper {
-  height: 680px;
-  width: 100%;
-}
-
 .future-weather-calendar {
+  height: 680px;
   display: flex;
   flex-direction: column;
-  height: 100%;
   margin-left: 10px;
 }
 
