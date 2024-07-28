@@ -244,8 +244,8 @@ export default {
 }
 
 .future-weather-calendar {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   height: 100%;
   margin-left: 10px;
 }
