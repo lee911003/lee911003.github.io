@@ -156,7 +156,9 @@
           <div class="iframe-wrapper" v-if="weatherView === 'today'">
             <q-img :src="weatherImgSrc" />
           </div>
-          <FutureWeatherCalendar />
+          <div class="calendar-wrapper" v-if="weatherView === 'future'">
+            <FutureWeatherCalendar />
+          </div>
         </div>
       </div>
 
