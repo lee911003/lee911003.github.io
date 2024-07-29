@@ -30,7 +30,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container id="todayWeather" style="width: 1230px; margin: 16px">
+    <q-page-container id="todayWeather" style="width: 1230px; margin: 14px">
       <div class="q-pa-md">
         <!-- 今日天氣和未來天氣 -->
         <div class="top-title">
@@ -493,7 +493,7 @@ export default defineComponent({
       }
     };
 
-    // 天氣警特報&高溫低溫資訊&日常圖資開關
+    // 天氣警特報&高溫低溫特報&日常圖資開關
     const fetchWeatherAndTemperatureWarnings = async (
       cityName,
       districtName
@@ -547,19 +547,19 @@ export default defineComponent({
               switch (phenomena) {
                 case "大雨":
                   severeRain = true;
-                  return "當前區域未來可能有強降雨發生，記得攜帶雨傘和關注防災資訊!";
+                  return "當前區域未來可能有強降雨發生，記得攜帶雨傘和關注防災資訊！";
                 case "豪雨":
                   severeRain = true;
-                  return "當前區域未來可能有豪雨發生，記得攜帶雨傘和關注防災資訊!";
+                  return "當前區域未來可能有豪雨發生，記得攜帶雨傘和關注防災資訊！";
                 case "大豪雨":
                   severeRain = true;
-                  return "當前區域未來可能有大豪雨發生，記得攜帶雨傘和關注防災資訊!";
+                  return "當前區域未來可能有大豪雨發生，記得攜帶雨傘和關注防災資訊！";
                 case "超大豪雨":
                   severeRain = true;
-                  return "當前區域未來可能有超大豪雨發生，記得攜帶雨傘和關注防災資訊!";
+                  return "當前區域未來可能有超大豪雨發生，記得攜帶雨傘和關注防災資訊！";
                 case "海上陸上颱風":
                   typhoon = true;
-                  return "當前區域未來可能受到颱風影響，記得盡量避免外出、做好防範措施和關注防災資訊!";
+                  return "當前區域未來可能受到颱風影響，記得盡量避免外出、做好防範措施和關注防災資訊！";
                 default:
                   return "";
               }
@@ -655,7 +655,7 @@ export default defineComponent({
                 `City: ${cityName}, District: ${districtName}, Time: ${time}, Temperature: ${temp}, Comfort Index: ${comfortIndexText}, Precipitation Probability: ${precipitationProbability}, AQI: ${aqiValue}`
               );
 
-              // 設定高溫和低溫資訊燈號的預設按鈕
+              // 設定高溫和低溫特報燈號的預設按鈕
               if (temp > 35) {
                 changeIframeWarnSrc(
                   warnbuttons.find((btn) => btn.label === "高溫資訊燈號").url,
@@ -664,17 +664,17 @@ export default defineComponent({
                   "760px"
                 );
                 warnings.push(
-                  "高溫資訊 : 當前區域未來溫度預計超過36度，記得注意防曬與補充水分!"
+                  "高溫資訊 : 當前區域未來溫度預計超過36度，記得注意防曬與補充水分！"
                 );
               } else if (temp < 11) {
                 changeIframeWarnSrc(
-                  warnbuttons.find((btn) => btn.label === "低溫資訊燈號").url,
-                  "低溫資訊燈號",
+                  warnbuttons.find((btn) => btn.label === "低溫特報燈號").url,
+                  "低溫特報燈號",
                   "cold.png",
                   "760px"
                 );
                 warnings.push(
-                  "低溫資訊 : 當前區域未來溫度預計低於10度，記得攜帶外套並注意保暖!"
+                  "低溫特報 : 當前區域未來溫度預計低於10度，記得攜帶外套並注意保暖！"
                 );
               }
 
@@ -975,7 +975,7 @@ export default defineComponent({
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1290px;
+  max-width: 1285px;
 }
 
 .header-icon {
@@ -1123,7 +1123,7 @@ export default defineComponent({
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-100%);
