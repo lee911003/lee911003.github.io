@@ -51,18 +51,8 @@
                     v-if="day.weatherIcon"
                     :src="day.weatherIcon"
                     class="weather-icon"
-                    @mouseenter="showTooltip($refs['tooltip-' + index])"
-                    @mouseleave="hideTooltip($refs['tooltip-' + index])"
-                    @click="toggleTooltip($refs['tooltip-' + index])"
                   >
-                    <q-tooltip
-                      ref="tooltip-{{ index }}"
-                      transition-show="scale"
-                      transition-hide="scale"
-                      anchor="bottom middle"
-                      self="top middle"
-                      style="font-size: 16px"
-                    >
+                    <q-tooltip transition-show="scale" style="font-size: 16px">
                       {{ day.description }}
                     </q-tooltip>
                   </q-img>
@@ -78,23 +68,10 @@
             v-for="(stat, index) in filteredStatistics"
             :key="index"
           >
-            <q-img
-              :src="stat.icon"
-              class="stat-icon"
-              @mouseenter="showTooltip($refs['stat-tooltip-' + index])"
-              @mouseleave="hideTooltip($refs['stat-tooltip-' + index])"
-              @click="toggleTooltip($refs['stat-tooltip-' + index])"
-            >
-              <q-tooltip
-                ref="stat-tooltip-{{ index }}"
-                transition-show="scale"
-                transition-hide="scale"
-                anchor="bottom middle"
-                self="top middle"
-                style="font-size: 16px"
-              >
-                {{ stat.description }}
-              </q-tooltip>
+            <q-img :src="stat.icon" class="stat-icon">
+              <q-tooltip transition-show="scale" style="font-size: 16px">{{
+                stat.description
+              }}</q-tooltip>
             </q-img>
             <span>{{ stat.count }}天</span>
           </div>
@@ -236,22 +213,6 @@ export default {
     const isWeekend = (day) => day === "SAT" || day === "SUN";
     const isWeekendIndex = (index) => index % 7 === 0 || index % 7 === 6;
 
-    const showTooltip = (tooltip) => {
-      tooltip.show();
-    };
-
-    const hideTooltip = (tooltip) => {
-      tooltip.hide();
-    };
-
-    const toggleTooltip = (tooltip) => {
-      if (tooltip.showing) {
-        tooltip.hide();
-      } else {
-        tooltip.show();
-      }
-    };
-
     onMounted(() => {
       loadCSV();
     });
@@ -265,9 +226,6 @@ export default {
       filteredStatistics,
       isWeekend,
       isWeekendIndex,
-      showTooltip,
-      hideTooltip,
-      toggleTooltip,
     };
   },
 };
