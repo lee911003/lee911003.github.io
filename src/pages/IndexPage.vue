@@ -1,11 +1,11 @@
 <template>
   <q-layout view="hHh lpR fff">
-    <q-header class="header">
-      <q-toolbar style="width: 1230px">
+    <q-header>
+      <q-toolbar class="title-toolbar">
         <q-toolbar-title> </q-toolbar-title>
         <div>
-          <q-btn flat @click="scrollToSection('todayWeather')"
-            ><img
+          <q-btn flat @click="scrollToSection('todayWeather')">
+            <img
               :src="require('assets/icon/天氣圖卡.png')"
               class="header-icon"
             />
@@ -30,7 +30,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container id="todayWeather" style="width: 1230px; margin: 14px">
+    <q-page-container id="todayWeather" style="margin: 0 auto">
       <div class="q-pa-md">
         <!-- 今日天氣和未來天氣 -->
         <div class="top-title">
@@ -82,6 +82,45 @@
             <span v-if="weatherView === 'future'" class="icon-text">
               <strong>想知道未來一個月的天氣類型是什麼嗎?</strong>
             </span>
+            <!-- 天氣icon說明 -->
+            <q-btn
+              flat
+              icon="info"
+              @click="showFutureInfoDialog"
+              label="呼叫熊好懂"
+              class="q-ml-xs"
+              v-if="weatherView === 'future'"
+            />
+            <q-dialog v-model="futureInfoDialog" class="custom-dialog">
+              <q-card class="custom-card">
+                <q-tabs v-model="tab" class="text-teal" inline-label dense>
+                  <q-tab
+                    v-for="(info, index) in infoData"
+                    :key="index"
+                    :name="info.label"
+                  >
+                    <div class="tab-content">
+                      <q-img :src="info.icon" class="tab-icon" />
+                      <div>{{ info.label }}</div>
+                    </div>
+                  </q-tab>
+                </q-tabs>
+                <q-tab-panels v-model="tab" animated>
+                  <q-tab-panel
+                    v-for="(info, index) in infoData"
+                    :key="index"
+                    :name="info.label"
+                  >
+                    <q-card-section>
+                      <div v-html="info.content"></div>
+                    </q-card-section>
+                  </q-tab-panel>
+                </q-tab-panels>
+                <q-card-actions align="right">
+                  <q-btn flat label="關閉" v-close-popup />
+                </q-card-actions>
+              </q-card>
+            </q-dialog>
             <div class="button-container">
               <!-- 下載按鈕 -->
               <q-btn
@@ -403,6 +442,7 @@ import html2canvas from "html2canvas";
 import { warnbuttons } from "src/data/warnData.js";
 import { dailybuttons } from "src/data/dailyData.js";
 import { cityDistricts } from "src/data/cityData.js";
+import { infoData } from "src/assets/calendar/weatherIcons.js";
 import FutureWeatherCalendar from "src/components/FutureWeatherCalendar.vue";
 
 export default defineComponent({
@@ -922,6 +962,16 @@ export default defineComponent({
       dailyInfoDialog.value = true;
     };
 
+    // 月曆說明
+    const futureInfoDialog = ref(false);
+    const tab = ref(infoData[0].label);
+    // 將 infoData 引入 setup 方法
+    const infoDataRef = ref(infoData);
+
+    const showFutureInfoDialog = () => {
+      futureInfoDialog.value = true;
+    };
+
     initializeLocationAndImage();
 
     return {
@@ -963,19 +1013,38 @@ export default defineComponent({
       dailyInfoTitle,
       dailyInfoContent,
       showDailyInfoDialog,
+      showFutureInfoDialog,
+      futureInfoDialog,
+      tab,
+      infoData: infoDataRef,
     };
   },
 });
 </script>
 
 <style scoped>
-.header {
+.q-header {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  width: 100%;
+}
+
+.title-toolbar {
   background-color: transparent;
   background-image: url("assets/header.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1285px;
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto; /* 置中 */
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
 }
 
 .header-icon {
@@ -1048,6 +1117,27 @@ export default defineComponent({
 .download-button {
   margin-right: 5px;
   background-color: transparent;
+}
+
+/* 月曆icon說明 */
+.custom-card {
+  padding-top: 5px;
+  min-width: 640px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+}
+
+.tab-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
 }
 
 .top-banner-button {

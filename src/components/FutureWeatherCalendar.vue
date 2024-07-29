@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center" style="min-height: 660px; padding: 30px">
+  <q-page class="flex flex-center" style="padding: 20px">
     <div class="future-weather-calendar">
       <div class="calendar-header">
         <div class="year">
@@ -88,7 +88,11 @@
 <script>
 import { ref, computed, onMounted } from "vue";
 import Papa from "papaparse";
-import { weatherIcons, descriptions } from "assets/calendar/weatherIcons.js";
+import {
+  weatherIcons,
+  descriptions,
+  infoData,
+} from "assets/calendar/weatherIcons.js";
 
 export default {
   name: "FutureWeatherCalendar",
