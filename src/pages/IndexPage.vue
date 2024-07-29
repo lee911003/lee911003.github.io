@@ -975,6 +975,7 @@ export default defineComponent({
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  max-width: 1290px;
 }
 
 .header-icon {
