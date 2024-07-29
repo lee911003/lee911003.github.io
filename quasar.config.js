@@ -49,7 +49,7 @@ module.exports = configure(function (ctx) {
         favicon: "src/assets/logo.png", // 指向你的圖標文件
       },
       // transpile: false,
-      publicPath: "/index.html",
+      publicPath: "/",
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
       // (from node_modules, which are by default not transpiled).
