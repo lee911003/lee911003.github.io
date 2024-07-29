@@ -5,7 +5,7 @@ export const warnbuttons = [
     icon: "typhoon.png",
     height: "740px",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-颱風路徑</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-颱風路徑</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px; '>颱風在哪裡？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>點擊「即時颱風」可以選擇想要看的颱風位置。</div>" +
@@ -19,7 +19,7 @@ export const warnbuttons = [
     height: "760px",
     icon: "alarm.png",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-全台示警燈號</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-全台示警燈號</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>示警燈號是什麼？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>這裡展示了全台各縣市的示警燈號狀況。</div>" +
@@ -34,7 +34,7 @@ export const warnbuttons = [
     height: "700px",
     icon: "hot.png",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-高溫資訊燈號</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-高溫資訊燈號</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>高溫燈號是什麼？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>高溫燈號標準是氣象署訂出來的喔！</div>" +
@@ -48,7 +48,7 @@ export const warnbuttons = [
     height: "760px",
     icon: "cold.png",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-低溫特報燈號</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-低溫特報燈號</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>低溫燈號是什麼？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>低溫燈號標準是氣象署訂出來的喔！</div>" +

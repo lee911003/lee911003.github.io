@@ -8,7 +8,7 @@ export const dailybuttons = [
     title: "好像要下雨啦！",
     caption: "落雨小幫手",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-落雨小幫手</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-落雨小幫手</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>這是什麼呀？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>「落雨小幫手」可以幫我們判斷接下來是不是可能會下雨！</div>" +
@@ -27,7 +27,7 @@ export const dailybuttons = [
     title: "之後會不會下雨呢？",
     caption: "降雨預報",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-定量降雨預報</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-定量降雨預報</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>這是什麼呀？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>「定量降雨預報」顧名思義就是未來會下多少雨的預報！</div>" +
@@ -44,7 +44,7 @@ export const dailybuttons = [
     title: "今天要穿什麼衣服呢？",
     caption: "氣溫監測",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-地面測站氣溫</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-地面測站氣溫</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>這是什麼呀？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>「地面測站氣溫」可以看到台灣地區所有測站目前測量到的氣溫！</div>" +
@@ -64,7 +64,7 @@ export const dailybuttons = [
     title: "最近的空氣品質如何？",
     caption: "空氣品質預報",
     discription:
-      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>圖資說明-空氣品質預報</div>",
+      "<div style='font-size: 20px; font-weight: bold; padding: 3px;'>熊好懂告訴你-空氣品質預報</div>",
     content:
       "<div style='font-size: 16px; font-weight: bold; padding: 5px;'>這是什麼呀？</div>" +
       "<div style='font-size: 14px; padding: 5px;'>「空氣品質預報」顧名思義就是未來空氣品質狀況的預報！</div>" +
