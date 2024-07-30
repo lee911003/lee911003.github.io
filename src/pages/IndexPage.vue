@@ -26,12 +26,12 @@
               class="header-icon"
             />
           </q-btn>
-          <router-link to="/history" class="q-btn q-btn--flat">
+          <!-- <router-link to="/history" class="q-btn q-btn--flat">
             <img
               :src="require('assets/icon/歷史資訊.png')"
               class="header-icon"
             />
-          </router-link>
+          </router-link> -->
         </div>
       </q-toolbar>
     </q-header>
