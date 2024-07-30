@@ -26,6 +26,12 @@
               class="header-icon"
             />
           </q-btn>
+          <router-link to="/history" class="q-btn q-btn--flat">
+            <img
+              :src="require('assets/icon/歷史資訊.png')"
+              class="header-icon"
+            />
+          </router-link>
         </div>
       </q-toolbar>
     </q-header>
@@ -188,7 +194,7 @@
                 "
               />
               <span style="color: black"
-                >最新消息以氣象署為主，請隨時關注氣象署公布資訊~</span
+                >最新消息以氣象署為主，請隨時關注氣象署公布資訊 ~</span
               >
             </div>
           </div>
@@ -454,7 +460,7 @@ export default defineComponent({
     // 選擇地區
     const cityOptions = cityDistricts.map((city) => city.cityName);
     const selectedCity = ref("新北市");
-    const selectedDistrict = ref("萬里區");
+    const selectedDistrict = ref("新店區");
     const districtOptions = ref([]);
 
     // 今日天氣和未來天氣
@@ -1122,7 +1128,7 @@ export default defineComponent({
 /* 月曆icon說明 */
 .custom-card {
   padding-top: 5px;
-  min-width: 640px;
+  min-width: 680px;
   height: 320px;
   overflow: hidden;
 }

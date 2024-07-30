@@ -2,11 +2,9 @@
   <q-page class="flex flex-center" style="min-height: 660px; padding: 20px">
     <div class="future-weather-calendar">
       <div class="calendar-header">
-        <div class="year">
-          <div class="year-part q-pl-xs">{{ calendarYearPart1 }}</div>
-          <div class="year-part q-pl-xs">{{ calendarYearPart2 }}</div>
+        <div class="month-test q-pl-md">
+          {{ calendarYearPart1 }}{{ calendarYearPart2 }} AI Calendar
         </div>
-        <div class="month q-pl-md">AI Calendar</div>
       </div>
       <div class="main-content">
         <div class="calendar-section">
@@ -257,7 +255,7 @@ export default {
   flex-direction: column;
   font-size: 40px;
   font-weight: bold;
-  color: rgb(114, 114, 114);
+  color: rgb(132, 55, 14);
   margin-right: 10px;
 }
 
@@ -270,6 +268,12 @@ export default {
   font-size: 95px;
   font-weight: bolder;
   color: rgb(58, 92, 75);
+}
+
+.month-test {
+  font-size: 95px;
+  font-weight: bolder;
+  color: rgb(132, 55, 14);
 }
 
 /* 主內容區域 */
@@ -296,14 +300,14 @@ export default {
   flex-direction: column;
   align-items: center;
   color: white;
-  background-color: rgb(108, 147, 111);
+  background-color: rgb(213, 163, 139);
   font-size: 25px;
   font-weight: bold;
   padding: 15px;
 }
 
 .day-header.weekend {
-  color: rgb(205, 2, 2);
+  color: rgb(132, 55, 14);
 }
 
 /* 日期格子 */
@@ -336,7 +340,7 @@ export default {
   font-weight: bold;
   margin-left: 5px;
   margin-right: 3px;
-  color: rgb(58, 92, 75);
+  color: rgb(132, 55, 14);
   position: relative;
 }
 

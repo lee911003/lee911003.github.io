@@ -92,6 +92,10 @@ export const cityDistricts = [
   {
     districts: [
       {
+        zip: "231",
+        districtName: "新店區",
+      },
+      {
         zip: "207",
         districtName: "萬里區",
       },
@@ -131,10 +135,7 @@ export const cityDistricts = [
         zip: "228",
         districtName: "貢寮區",
       },
-      {
-        zip: "231",
-        districtName: "新店區",
-      },
+
       {
         zip: "232",
         districtName: "坪林區",
