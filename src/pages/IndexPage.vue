@@ -1127,9 +1127,9 @@ export default defineComponent({
 
 /* 月曆icon說明 */
 .custom-card {
-  padding-top: 5px;
-  min-width: 680px;
-  height: 320px;
+  padding-top: 7px;
+  min-width: 670px;
+  height: 350px;
   overflow: hidden;
 }
 

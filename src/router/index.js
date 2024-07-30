@@ -6,8 +6,6 @@ import {
   createWebHashHistory,
 } from "vue-router";
 import routes from "./routes";
-import IndexPage from "src/pages/IndexPage.vue";
-import HistoryPage from "src/pages/HistoryPage.vue";
 
 /*
  * If not building with SSR mode, you can
